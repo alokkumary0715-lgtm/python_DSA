@@ -30,3 +30,32 @@ for i in range (0,rows):
         result[i][j] = spiral[i][j]
 print(result)
 
+#SET MATRIX ZERO
+#BRUTE FORCE SOLUTION
+def mark_infinity(matrix,row,col):
+    rows = len(matrix)
+    clm = len(matrix[0])
+    for i in range (0,rows):
+        if matrix[i][col] != 0:
+            matrix[i][col] = float('inf')
+    for j in range(0,clm):
+        if matrix[row][j] != 0:
+            matrix[row][j] = float('inf')
+
+def set_matrix_zero(matrix):
+    r = len(matrix)
+    c = len(matrix[0])
+    for i in range (0,r):
+        for j in range (0,c):
+            if matrix[i][j] == 0:
+                mark_infinity(matrix,i,j)
+    for i in range (0,r):
+        for j in range (0,c):
+            if matrix[i][j] == float('inf'):
+                matrix[i][j] = 0
+
+
+#driver code
+matrix = [[1,2,3],[4,0,6],[7,8,9]]
+set_matrix_zero(matrix)
+print(matrix)   
