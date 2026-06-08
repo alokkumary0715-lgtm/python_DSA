@@ -58,4 +58,53 @@ def set_matrix_zero(matrix):
 #driver code
 matrix = [[1,2,3],[4,0,6],[7,8,9]]
 set_matrix_zero(matrix)
-print(matrix)   
+print(matrix)  
+
+#OPTIMIZED SOLUTION
+def set_matrix_zero_optimized(matrix):  
+    rows = len(matrix)
+    clm = len(matrix[0])
+    row_zero = False
+    col_zero = False
+    for i in range (0,rows):
+        if matrix[i][0] == 0:
+            col_zero = True
+            break
+    for j in range (0,clm):
+        if matrix[0][j] == 0:
+            row_zero = True
+            break
+    for i in range (1,rows):
+        for j in range (1,clm):
+            if matrix[i][j] == 0:
+                matrix[i][0] = 0
+                matrix[0][j] = 0
+    for i in range (1,rows):
+        for j in range (1,clm):
+            if matrix[i][0] == 0 or matrix[0][j] == 0:
+                matrix[i][j] = 0
+    if row_zero:
+        for j in range (clm):
+            matrix[0][j] = 0
+    if col_zero:
+        for i in range (rows):
+            matrix[i][0] = 0
+
+
+#optimize code
+
+matrix = [[1,2,3],[4,0,6],[0,8,9]]
+r = len(matrix)
+c = len(matrix[0])
+# create a row and column tracker to keep track of which row and column has zero
+rowtracker = [0 for _ in range (r)]
+coltracker = [0 for _ in range (c)]
+for i in range (0,r):
+    for j in range (0,c):
+        if matrix[i][j] == 0:
+            rowtracker[i] = -1
+            coltracker[j] = -1
+for i in range (0,r):
+    for j in range (0,c):
+        if rowtracker[i] == -1 or coltracker[j] == -1:
+            matrix[i][j] = 0
