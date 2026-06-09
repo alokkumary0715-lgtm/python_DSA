@@ -1,4 +1,4 @@
-count occurance in soted arrey
+#count occurance in soted arrey
 def count_occurrence(arr, target):
     left = -1
     right = -1
