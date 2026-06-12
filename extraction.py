@@ -57,3 +57,27 @@ if num == total:
     print("Amstrong number")
 else:    print("Not an Amstrong number")
 
+#all factors of a number
+# brut force approach
+
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+n = len(nums)
+n = nums
+result = [] 
+for i in range(1, n + 1):
+    if n % i == 0:
+        result.append(i)
+print("Factors of", n, "are:", result)
+
+
+
+# optimized approach
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+n = len(nums)
+n = nums
+result = []
+for i in range (1,nums//2 ):
+    if n % i == 0:
+        result.append(i)
+result.append(n) # this will add the number itself to the list of factors
+print("Factors of", n, "are:", result)
