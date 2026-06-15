@@ -32,3 +32,8 @@ for i in m:
             count += 1
 print(count)
 
+
+
+
+# use print when you want to display something on the console and use return when you want to send a value back 
+
