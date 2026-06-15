@@ -37,3 +37,7 @@ print(count)
 
 # use print when you want to display something on the console and use return when you want to send a value back 
 
+def reverse_string(s):
+    return s[::-1]
+
+print(reverse_string("hello"))
