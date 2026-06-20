@@ -11,7 +11,7 @@ emp.salary = -1000  # here i have changed the salry
 print(emp.salary) 
 
 
-with encapsulation
+#with encapsulation
 class employee:
     def __init__(self):
         self.__salary = 6000   #__this to make private
