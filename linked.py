@@ -32,3 +32,25 @@ class solution:
             
 obj = solution()
 print(obj.cycle(node1))
+
+
+#length of loop in linked list
+class length:
+    def le(self,head):
+        temp = head
+        my_dict = dict()
+        travel = 0
+        while temp is not None:
+            if temp in my_dict:
+                return travel - my_dict[temp]
+            my_dict[temp]= travel
+            travel +=1
+            temp= temp.next
+        return 0
+    
+obj2 =length()
+print(obj2.le(node1))
+  
+        
+
+        
